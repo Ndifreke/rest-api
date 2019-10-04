@@ -1,0 +1,25 @@
+{
+  "name": "rest-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ndifreke/rest-api.git"
+  },
+  "author": "Ndifreke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ndifreke/rest-api/issues"
+  },
+  "homepage": "https://github.com/Ndifreke/rest-api#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "geoquery": "^0.6.3",
+    "jest": "^24.9.0",
+    "redis": "^2.8.0"
+  }
+}
