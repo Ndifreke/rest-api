@@ -3,13 +3,16 @@ const app = express()
 const countryRoute = require("./routes/countryRoute")
 
 
-app.get("/country/", countryRoute)
+app.use("/country", countryRoute)
 
 app.use(function (_, resp) {
+    console.log(_.path)
     resp.statusCode = 501
     resp.json({
-        status: "error",
-        messeage: "resquest is not supported"
+        data: {
+            status: "error",
+            messeage: "resquest is not supported"
+        }
     })
 
 })
