@@ -1,12 +1,18 @@
 const express = require("express")
 const app = express()
+const dotenv = require('dotenv')
 const countryRoute = require("./routes/countryRoute")
+const redisService = require('./services/redis/redis')
 
+dotenv.config()
+redisService({
+    port: process.env.REDIS_PORT,
+    host: process.env.REDIS_HOST
+})
 
 app.use("/country", countryRoute)
 
 app.use(function (_, resp) {
-    console.log(_.path)
     resp.statusCode = 501
     resp.json({
         data: {
@@ -17,7 +23,7 @@ app.use(function (_, resp) {
 
 })
 
-app.listen(8080)
+app.listen(process.env.NODE_PORT || 8080)
 
 
 
