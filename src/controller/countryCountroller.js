@@ -19,7 +19,7 @@ const countryController = function (options) {
     const key = `${mode}:${id}`
     const cached = await redis.asyncGet(key)
     if (cached) {
-      res.end(cached)
+      res.json(JSON.parse(cached))
     } else {
       const query = countryTemplate.replace("#id", id).replace("#mode", mode)
       let result = await geoquery(query);
